@@ -6,7 +6,9 @@ app:
 
   frontend:
     port: 80
-    image: $DOCKER_IMAGE_FRONTEND
+    image:
+      name: webpack-boilerplate
+      tag: v1
     imagePullPolicy: Always
     env:
       DEBUG: 0
