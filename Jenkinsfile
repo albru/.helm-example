@@ -90,7 +90,7 @@ def dockerPush() {
 
 def deployK8S() {
     stage('Deploy to K8S') {
-        withCredentials([usernamePassword(credentialsId: "${env.SA}", usernameVariable: "USERNAME", passwordVariable: "PASSWORD")]) {
+        withCredentials([usernamePassword(credentialsId: "${env.SA}", usernameVariable: "", passwordVariable: "")]) {
             def deployer = docker.image('dockerimage');
             deployer.pull();
             withEnv (["CLUSTER=${env.K8S_CLUSTER}"]) {
